@@ -11,8 +11,8 @@ const sendResetEmail = async (email, resetToken) => {
       },
     });
 
-    const resetUrl = `${process.env.CLIENT_URL}/reset-password.html?token=${resetToken}`;
-
+// NEW – uses the Netlify variable you just added
+const resetUrl = `${process.env.CLIENT_URL}/reset-password.html?token=${resetToken}`;
     const mailOptions = {
       from: `"Your App" <${process.env.EMAIL_USER}>`,
       to: email,
