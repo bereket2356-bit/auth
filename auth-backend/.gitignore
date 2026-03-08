@@ -1,0 +1,15 @@
+# Essentials
+node_modules/
+.env
+.env.*
+*.log
+
+# Netlify / deployment
+.netlify/
+dist/
+build/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
