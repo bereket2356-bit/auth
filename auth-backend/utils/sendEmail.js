@@ -11,8 +11,11 @@ const sendResetEmail = async (email, resetToken) => {
       },
     });
 
-// NEW – uses the Netlify variable you just added
-const resetUrl = `${process.env.CLIENT_URL}/reset-password.html?token=${resetToken}`;
+
+
+// Even better – fallback for local development
+const baseUrl = process.env.CLIENT_URL || 'http://localhost:5500';
+const resetUrl = `${baseUrl}/reset-password.html?token=${resetToken}`;
     const mailOptions = {
       from: `"CHAT-BOT" <${process.env.EMAIL_USER}>`,
       to: email,
